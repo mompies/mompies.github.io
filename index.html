@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mompies - Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+        .card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 30px;
+            margin: 20px 0;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>🚀 mompies.github.io</h1>
+        <p>✅ GitHub Pages funcionando correctamente</p>
+        <p>👋 Hola, soy <strong>mompies</strong></p>
+        <p>💻 Full Stack Developer | 🎨 Modelador 3D | ✨ Diseñador</p>
+        
+        <div style="margin-top: 30px;">
+            <span class="badge">Frontend</span>
+            <span class="badge">Backend</span>
+            <span class="badge">Modelado 3D</span>
+            <span class="badge">Diseño UI/UX</span>
+        </div>
+        
+        <p style="margin-top: 40px; font-size: 0.9em;">
+            📍 Próximamente: Mi portfolio completo con modelos 3D interactivos
+        </p>
+        <p style="font-size: 0.8em; opacity: 0.8;">
+            ⏱️ Última actualización: <span id="fecha"></span>
+        </p>
+    </div>
+
+    <script>
+        // Mostrar fecha actual
+        document.getElementById('fecha').textContent = new Date().toLocaleDateString('es-ES', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+        });
+        
+        console.log('🚀 Sitio de prueba de mompies cargado correctamente');
+    </script>
+</body>
+</html>
