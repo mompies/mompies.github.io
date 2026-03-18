@@ -1,0 +1,429 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  scrollbar-width: thin;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #AAA;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+
+
+html {
+    background-color: #000;
+    color: #aaa;
+}
+
+body {
+    position: relative;
+    display: flex; 
+    align-items: center;
+    flex-direction: column;
+    font-size: 17px;
+    letter-spacing: 0.5px;
+    line-height: 25px;
+    font-weight: 400;
+}
+
+
+header {
+    margin: 20px;
+    margin-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+header img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+header .name-profesion
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+main {
+    position: relative;
+    max-width: 1000px;
+    margin: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    margin-top: 0px;
+}
+.profesion {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-weight: 500;
+    margin-top:10px;
+    font-size: 0.8rem;
+    padding: 1px 10px;
+    border-radius: 30px;
+    width: fit-content;
+    border: 1px solid #999;
+    color: #999;
+}
+
+
+
+
+.resumen {
+ hyphens: auto; 
+    overflow-wrap: break-word; 
+    word-break: break-word; 
+}
+
+.resumen strong {
+    color: #eee;
+    font-weight: 500;
+}
+.contacto {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.contacto button {
+padding: 8px 14px;
+background-color: #fff2;
+border: 1px solid #EEE1;
+color: #bbb;
+font-size: 14px;
+border-radius: 25px;
+display: flex;
+gap: 10px;
+align-items: center;
+letter-spacing: 0.2px;
+font-weight: 500;
+transition: all 0.2s ease-in-out;
+}
+
+.contacto button:hover {
+background-color: #fff3;
+color: #fff;
+padding: 8px 18px;
+border: 1px solid transparent;
+
+}
+
+.herramientas-feed {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.box-habilidad-detalle {
+display: none;
+opacity: 0;
+justify-content: center;
+position: fixed;
+z-index: 99;
+left: 0px;
+top: 0px;
+background-color: #000C;
+width: 100%;
+padding: 55px 15px;
+height: 100%;
+transition: opacity 0.2s ease-in-out 0.3s;
+}
+
+
+.show {
+    opacity: 1 !important;
+    transition: opacity 0.2s ease-in-out;
+}
+.box-habilidad-detalle.show .habilidad-detalle {
+margin-top: 0px;
+opacity: 1;
+transition: opacity 0.3s ease-in-out 0.3s, margin 0.3s ease-in-out 0.3s;
+}
+
+
+.habilidad-detalle {
+opacity: 0;
+display: flex;
+flex-direction: column;
+max-width: 820px;
+background-color: #BBB2;
+backdrop-filter: blur(15px);
+-webkit-backdrop-filter: blur(15px);
+margin-top: 100px;
+border-radius: 20px;
+overflow: hidden;
+transition: opacity 0.3s ease-in-out, margin 0.3s ease-in-out;
+}
+
+.detalle {
+    height: 100%;
+    padding: 0px 20px 20px 20px;
+    color: #999;
+    overflow-y: auto;
+}
+
+
+
+p,
+h3 {
+    margin: 0px;
+    padding: 0px;
+}
+
+.habilidad-detalle h4 {
+    position: sticky;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    width: 100%;
+    padding: 20px 20px 15px 20px ;
+    top: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.habilidad-detalle h4 button {
+    background-color: #fff1;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.habilidad-detalle h4 button::before,
+.habilidad-detalle h4 button::after {
+    content: "";
+    position: absolute;
+    background-color: #999;
+    width: 2px;
+    border-radius: 5px;
+    height: 15px;
+}
+.habilidad-detalle h4 button::after {
+    transform: rotate(45deg);
+}
+.habilidad-detalle h4 button::before {
+    transform: rotate(-45deg);
+}
+
+
+h3 {
+        color: #fff;
+
+        font-size: 18px;
+
+}
+
+
+.habilidades {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.habilidad {
+margin-top: 20px;
+
+}
+
+.habilidad h3 {
+display: flex;
+flex-direction: row;
+gap: 10px;
+align-items: center;
+}
+.habilidad h3 button {
+width: 35px;
+height: 24px;
+background-color: #ffffff15;
+border: 1px solid #ffffff15;
+border-radius: 20px;
+position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
+transition: all 0.2s ease-in-out;
+
+}
+.habilidad h3 button:hover {
+background-color: #fff2;
+border: 1px solid transparent;
+width: 45px;
+}
+.habilidad h3 button:hover::after {
+    border: solid #fffA;
+    border-width: 2px 2px 0px 0px;
+
+}
+.habilidad h3 button::after {
+content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    margin-left: -3px;
+    border: solid #fff5;
+    border-width: 2px 2px 0px 0px;
+    transform: rotate(45deg);
+
+}
+.habilidad h3 button::before {
+content: "";
+    position: absolute;
+    width: 60px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+.contacto button i {
+width: 16px;
+height: 16px;
+background-position: center center;
+background-repeat: no-repeat;
+filter: invert(1);
+}
+
+.icon-phone {
+background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Cpath%20d%3D%22M1%205q0-4%204-4h10c3%200%205%200%206%205l1%209c0%203-1%204-3%206l-6%206q8%2016%2024%2024l6-6c2-2%204-4%206-4l10%202c3%201%204%202%204%204v12q0%204-4%204Q7%2057%201%205%22%2F%3E%3C%2Fsvg%3E);
+}
+
+.icon-mail {
+background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2036%2028%22%3E%3Cpath%20d%3D%22M1%206V5Q1%201%205%201H31q4%200%204%204V6L18%2015Zm34%204-17%209L1%2010V23q0%204%204%204H31q4%200%204-4Z%22%2F%3E%3C%2Fsvg%3E);
+}
+
+.icon-loaction {
+background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2018%2023%22%3E%3Cpath%20d%3D%22M5%209a1%201%200%20018%200A1%201%200%20015%209M1%209c0%204%203%207%208%2013%205-6%208-9%208-14A1%201%200%20001%209%22%2F%3E%3C%2Fsvg%3E);
+height: 18px !important;
+}
+
+.icon-skp {
+background-image: url(data:image/svg+xml,%3Csvg%20stroke%3D%22%23000%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2051%2055%22%3E%3Cpath%20d%3D%22M20%2012c3-2%207-3%2011-1l10%207v13c0%204-2%207-8%2010v3l6-4c3-2%205-6%205-9V16L31%208c-4-2-8-1-10%200l-7%204%203%202Zm12%2021c1%200%203-1%203-5v-7l-3-2c-3-2-6-2-8-1l8%205ZM1%2021l17%2010v3l-9-5-6%203%2015%209v3L1%2034c1%205%204%209%207%2011l16%209V27L1%2014ZM16%204c7-4%2013-4%2019%200l15%209v21c0%205-4%209-9%2012l-14%208V26L3%2012Z%22%2F%3E%3C%2Fsvg%3E);
+}
+
+.separador {
+    width: 100%;
+    border-top: 2px dashed #fff3;
+    margin: 40px 0px;
+}
+h2 {
+    font-size: 16px;
+    margin: 0px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+
+.habilidad-resumen {
+margin-top: 8px;
+}
+.habilidad-resumen p {
+    font-size: 15px;
+    color: #AAA;
+    font-weight: 300;
+    line-height: 22px;
+    margin-bottom: 15px;
+}
+
+.herramientas-feed > p {
+padding: 4px 12px;
+font-size: 0.8rem;
+font-weight: normal;
+border-radius: 20px;
+background-color: #adff2f30;
+color: greenyellow;
+}
+
+
+.herramientas > div  {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.herramientas > div p  {
+    color: #ccc;
+    font-weight: 500;
+}
+
+.herramientas > div > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.herramientas > div > div > i {
+    width: 150px;
+    height: 5px;
+    background-color: #9acd3250;
+    margin: 2px 0px 5px 2px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.herramientas > div > div > i::after {
+content: "";
+height: 5px;
+left: 0px;
+top: 0px;
+width: 0%;
+background-color: yellowgreen;
+border-radius: 5px;
+position: absolute;
+transition: width 0.5s ease-in-out 0.4s;
+}
+
+.box-habilidad-detalle.show .herramientas  .skp::after {
+width: 84%;
+}
+
+
+
+.herramientas > div > i {
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 35px;
+    border-radius: 8px;
+    background-color: white;
+    height: 35px;
+    border: 5px solid white;
+}

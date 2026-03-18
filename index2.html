@@ -1,0 +1,957 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Manuel Mompies · CV / Portafolio</title>
+        <!-- Fuente Inter (variable) -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
+            rel="stylesheet"
+        />
+        <!-- Font Awesome 6 (free) -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        />
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                font-family:
+                    "Inter",
+                    -apple-system,
+                    BlinkMacSystemFont,
+                    sans-serif;
+                background: #f4f7fc;
+                color: #1f2a44;
+                line-height: 1.5;
+                padding: 2rem 1.5rem;
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .container {
+                max-width: 1300px;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.8);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                background: #ffffffdd;
+                border-radius: 3rem;
+                box-shadow:
+                    0 30px 60px -20px rgba(0, 20, 40, 0.2),
+                    0 0 0 1px rgba(255, 255, 255, 0.6) inset;
+                padding: 3rem 2.5rem;
+                transition: all 0.3s ease;
+            }
+            @media (max-width: 700px) {
+                body {
+                    padding: 1rem;
+                }
+                .container {
+                    padding: 2rem 1.5rem;
+                    border-radius: 2rem;
+                }
+            }
+            h1 {
+                font-size: 3.5rem;
+                font-weight: 700;
+                letter-spacing: -0.03em;
+                color: #0c1b33;
+                line-height: 1.1;
+                margin-bottom: 1.2rem;
+            }
+            h2 {
+                font-size: 2.2rem;
+                font-weight: 600;
+                letter-spacing: -0.02em;
+                color: #0c1b33;
+                margin: 2.5rem 0 1.8rem;
+                display: flex;
+                align-items: center;
+                gap: 0.7rem;
+                border-bottom: 2px solid rgba(0, 85, 255, 0.15);
+                padding-bottom: 0.6rem;
+            }
+            h2 i {
+                color: #1a4cff;
+                font-size: 2rem;
+                background: linear-gradient(135deg, #1a4cff20, #ffffff);
+                padding: 0.5rem;
+                border-radius: 1rem;
+            }
+            h3 {
+                font-size: 1.3rem;
+                font-weight: 600;
+                color: #0c1b33;
+                margin-bottom: 0.25rem;
+            }
+            .resumen {
+                background: linear-gradient(145deg, #ffffff, #f8fbff);
+                padding: 2rem 2.2rem;
+                border-radius: 2.5rem;
+                margin: 1.5rem 0 2rem;
+                border: 1px solid #ffffff;
+                box-shadow: 0 15px 30px -12px rgba(0, 40, 100, 0.1);
+                font-size: 1.1rem;
+                color: #1f3552;
+                position: relative;
+            }
+            .resumen i.fa-quote-left {
+                color: #1a4cff30;
+                font-size: 2rem;
+                position: absolute;
+                top: 1rem;
+                left: 1.2rem;
+            }
+            .contacto-grid {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1.8rem 2.8rem;
+                background: #ffffff;
+                padding: 1.2rem 2rem;
+                border-radius: 4rem;
+                margin-bottom: 1.5rem;
+                border: 1px solid rgba(0, 0, 0, 0.03);
+                box-shadow: 0 5px 15px -8px rgba(0, 0, 0, 0.1);
+            }
+            .contacto-item {
+                display: flex;
+                align-items: center;
+                gap: 0.6rem;
+                font-weight: 500;
+                color: #1f3552;
+                transition: transform 0.2s ease;
+            }
+            .contacto-item:hover {
+                transform: translateY(-2px);
+                color: #1a4cff;
+            }
+            .contacto-item i {
+                color: #1a4cff;
+                font-size: 1.2rem;
+                width: 1.6rem;
+                text-align: center;
+            }
+            /* skills grid */
+            .skills-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+                gap: 1.8rem;
+                margin-top: 1.5rem;
+            }
+            .skill-card {
+                background: #ffffff;
+                border-radius: 2rem;
+                padding: 1.8rem 1.5rem 1.5rem;
+                border: 1px solid rgba(0, 85, 255, 0.05);
+                box-shadow: 0 8px 20px -12px rgba(0, 30, 60, 0.15);
+                transition: all 0.25s ease;
+                display: flex;
+                flex-direction: column;
+            }
+            .skill-card:hover {
+                transform: scale(1.01) translateY(-4px);
+                box-shadow: 0 18px 30px -12px #1a4cff40;
+                border-color: #1a4cff20;
+            }
+            .skill-icon {
+                font-size: 2.4rem;
+                color: #1a4cff;
+                background: linear-gradient(145deg, #ffffff, #eef5ff);
+                width: 3.8rem;
+                height: 3.8rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 1.4rem;
+                margin-bottom: 1.4rem;
+                transition: 0.2s;
+                border: 1px solid #ffffff;
+            }
+            .skill-card:hover .skill-icon {
+                background: #1a4cff;
+                color: white;
+                transform: rotate(2deg) scale(1.02);
+            }
+            .skill-title {
+                font-size: 1.4rem;
+                font-weight: 600;
+                margin-bottom: 0.6rem;
+                color: #0c1b33;
+            }
+            .skill-desc {
+                color: #375477;
+                font-size: 0.95rem;
+                line-height: 1.5;
+                margin-bottom: 1.2rem;
+                flex: 1;
+            }
+            details {
+                margin-top: 0.8rem;
+                border-top: 1px dashed #d0ddee;
+                padding-top: 0.8rem;
+                transition: all 0.2s;
+            }
+            summary {
+                font-weight: 600;
+                color: #1a4cff;
+                cursor: pointer;
+                list-style: none;
+                display: flex;
+                align-items: center;
+                gap: 0.3rem;
+                font-size: 0.95rem;
+                letter-spacing: 0.02em;
+                transition: color 0.2s;
+            }
+            summary:hover {
+                color: #0c2b7a;
+            }
+            summary::-webkit-details-marker {
+                display: none;
+            }
+            summary::after {
+                content: "➕";
+                font-size: 0.85rem;
+                margin-left: auto;
+                opacity: 0.7;
+                transition: transform 0.2s;
+            }
+            details[open] summary::after {
+                content: "➖";
+                transform: rotate(180deg);
+            }
+            .details-content {
+                margin-top: 1.2rem;
+                font-size: 0.95rem;
+                color: #1f3552;
+                padding: 0.2rem 0.5rem 0.5rem 0;
+                animation: fadeIn 0.3s ease;
+            }
+            @keyframes fadeIn {
+                0% {
+                    opacity: 0;
+                    transform: translateY(-6px);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            .details-content p {
+                margin-bottom: 0.9rem;
+            }
+            .aplica {
+                background: #edf3fe;
+                border-radius: 1.5rem;
+                padding: 1rem 1.2rem;
+                font-weight: 500;
+                color: #0c2b7a;
+                border-left: 5px solid #1a4cff;
+                margin-top: 1.2rem;
+                font-size: 0.9rem;
+                box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.02);
+            }
+            .aplica i {
+                color: #1a4cff;
+                margin-right: 0.5rem;
+            }
+            .exp-item,
+            .edu-item {
+                background: #ffffff;
+                border-radius: 1.8rem;
+                padding: 1.8rem 2rem;
+                margin-bottom: 1.8rem;
+                border: 1px solid #edf2f9;
+                box-shadow: 0 6px 14px -8px rgba(0, 0, 0, 0.05);
+                transition: 0.2s;
+            }
+            .exp-item:hover {
+                border-color: #1a4cff30;
+                box-shadow: 0 12px 24px -12px #1a4cff30;
+            }
+            .exp-header {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: baseline;
+                margin-bottom: 0.5rem;
+            }
+            .exp-title {
+                font-size: 1.3rem;
+                font-weight: 700;
+                color: #0c1b33;
+            }
+            .exp-date {
+                color: #527a9b;
+                font-weight: 500;
+                background: #f0f6ff;
+                padding: 0.3rem 1rem;
+                border-radius: 3rem;
+                font-size: 0.9rem;
+            }
+            .exp-place {
+                font-weight: 600;
+                color: #1a4cff;
+                margin-bottom: 0.8rem;
+            }
+            .exp-desc ul {
+                margin-left: 1.4rem;
+                color: #2f4567;
+            }
+            .proyectos-list {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+                gap: 0.8rem;
+                list-style: none;
+            }
+            .proyectos-list li {
+                background: #ffffff;
+                padding: 0.9rem 1.2rem;
+                border-radius: 3rem;
+                font-weight: 500;
+                color: #1f3552;
+                display: flex;
+                align-items: center;
+                gap: 0.7rem;
+                border: 1px solid #e5eefc;
+                transition: 0.15s;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+            }
+            .proyectos-list li:hover {
+                background: #1a4cff08;
+                border-color: #1a4cff60;
+                transform: translateY(-2px);
+            }
+            .proyectos-list i {
+                color: #1a4cff;
+                font-size: 1.1rem;
+            }
+            .idiomas {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1.8rem;
+                background: #ffffff;
+                padding: 1.2rem 2.2rem;
+                border-radius: 4rem;
+                margin-top: 1.5rem;
+                border: 1px solid #e5eefc;
+            }
+            .idiomas span {
+                display: flex;
+                align-items: center;
+                gap: 0.6rem;
+                font-weight: 500;
+            }
+            footer {
+                margin-top: 3.5rem;
+                text-align: center;
+                color: #627b9b;
+                font-size: 0.9rem;
+                border-top: 1px solid #dbe5f0;
+                padding-top: 2rem;
+            }
+            hr {
+                display: none;
+            }
+            /* micro-interacciones */
+            a,
+            .skill-card,
+            summary,
+            .contacto-item {
+                transition: all 0.2s ease;
+            }
+            /* responsive */
+            @media (max-width: 600px) {
+                h1 {
+                    font-size: 2.6rem;
+                }
+                h2 {
+                    font-size: 1.8rem;
+                }
+                .contacto-grid {
+                    flex-direction: column;
+                    gap: 1rem;
+                    padding: 1.5rem;
+                }
+                .idiomas {
+                    flex-direction: column;
+                    gap: 0.8rem;
+                    border-radius: 2rem;
+                }
+                .skills-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <!-- NOMBRE -->
+            <h1>Manuel Mompies</h1>
+
+            <!-- RESUMEN (perfil) -->
+            <section class="resumen">
+                <i class="fas fa-quote-left"></i>
+                Ingeniero Industrial con más de una década de experiencia
+                autodidacta en modelado 3D técnico, diseño gráfico y desarrollo
+                web full‑stack. Combino visión analítica y sensibilidad visual
+                para crear soluciones optimizadas: desde modelos arquitectónicos
+                de alta precisión hasta aplicaciones web ultraligeras, seguras y
+                eficientes. Capacidad probada para integrar disciplinas
+                (modelado, automatización, fotografía, desarrollo) y entregar
+                resultados profesionales con un enfoque en rendimiento y
+                calidad.
+            </section>
+
+            <!-- CONTACTO -->
+            <section class="contacto-grid">
+                <span class="contacto-item"
+                    ><i class="fas fa-phone-alt"></i> +53 5 4922831</span
+                >
+                <span class="contacto-item"
+                    ><i class="fas fa-envelope"></i>
+                    manuelmompies@icloud.com</span
+                >
+                <span class="contacto-item"
+                    ><i class="fas fa-map-marker-alt"></i> La Habana / Playa,
+                    Cuba</span
+                >
+            </section>
+
+            <!-- HABILIDADES -->
+            <section id="habilidades">
+                <h2><i class="fas fa-cog"></i> Competencias clave</h2>
+                <div class="skills-grid">
+                    <!-- 1 Modelado 3D técnico -->
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <div class="skill-title">Modelado 3D técnico</div>
+                        <div class="skill-desc">
+                            SketchUp · Modelado paramétrico de precisión para
+                            arquitectura, industria y producto. Planos,
+                            despieces, cálculos de volumen y preparación para
+                            impresión 3D/fabricación.
+                        </div>
+                        <details>
+                            <summary>más+</summary>
+                            <div class="details-content">
+                                <p>
+                                    <strong>+10 años</strong> modelando con
+                                    SketchUp. Interpretación de planos, croquis
+                                    y generación de modelos exactos para
+                                    ingeniería, visualización o fabricación.
+                                </p>
+                                <p>
+                                    Geometría compleja, booleanas, componentes.
+                                    Optimización de peso. Cálculo automatizado
+                                    de volúmenes y listados de materiales
+                                    (hormigón, acero, etc.) aplicado en obra.
+                                </p>
+                                <p>
+                                    Preparación para impresión 3D: tolerancias,
+                                    soportes, despieces. Render básico con
+                                    V-Ray/Lumion.
+                                </p>
+                                <div class="aplica">
+                                    <i class="fas fa-bullseye"></i>
+                                    <strong>Aplica a:</strong> Arquitectura,
+                                    ingeniería, diseño de producto, fabricación
+                                    digital, visualización.
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+                    <!-- 2 Estimación/presupuestos 3D -->
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="skill-title">
+                            Estimación y presupuestos 3D
+                        </div>
+                        <div class="skill-desc">
+                            Mediciones desde modelos, hojas de coste
+                            automatizadas (Excel/VBA) con desperdicios y
+                            normativas. Integración con paneles.
+                        </div>
+                        <details>
+                            <summary>más+</summary>
+                            <div class="details-content">
+                                <p>
+                                    A partir del modelo 3D extraigo listados y
+                                    construyo hojas de cálculo con fórmulas de
+                                    coste automatizadas (VBA / Apps Script).
+                                    Experiencia en la Zona de Desarrollo Mariel
+                                    con materiales y normativas reales.
+                                </p>
+                                <p>
+                                    Presupuestos desglosados, escenarios,
+                                    exportables. Posibilidad de integrar en
+                                    dashboards web.
+                                </p>
+                                <div class="aplica">
+                                    <i class="fas fa-bullseye"></i>
+                                    <strong>Aplica a:</strong> Constructoras,
+                                    talleres, estudios de arquitectura,
+                                    consultoría técnica.
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+                    <!-- 3 Vectores CNC / SVG técnico -->
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-vector-square"></i>
+                        </div>
+                        <div class="skill-title">
+                            Vectores para CNC / manufactura
+                        </div>
+                        <div class="skill-desc">
+                            Archivos vectoriales (SVG, DXF) optimizados para
+                            corte láser, router CNC, plasma. Paths limpios,
+                            tolerancias, documentación.
+                        </div>
+                        <details>
+                            <summary>más+</summary>
+                            <div class="details-content">
+                                <p>
+                                    Transformo diseños en paths minimalistas sin
+                                    errores. Revisión de escalado, orientación,
+                                    solapamientos. Optimización de código SVG.
+                                </p>
+                                <p>
+                                    Ajuste por material (madera, acrílico,
+                                    metal) y tipo de corte. Planos de corte y
+                                    especificaciones.
+                                </p>
+                                <div class="aplica">
+                                    <i class="fas fa-bullseye"></i>
+                                    <strong>Aplica a:</strong> Talleres de
+                                    fabricación digital, carpinterías,
+                                    metalistería, makerspaces.
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+                    <!-- 4 Diseño gráfico y branding -->
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <div class="skill-title">Diseño gráfico y branding</div>
+                        <div class="skill-desc">
+                            Identidad visual completa: logotipos, paletas,
+                            papelería. Flyers, tarjetas, presentaciones.
+                            Optimización de SVG para web.
+                        </div>
+                        <details>
+                            <summary>más+</summary>
+                            <div class="details-content">
+                                <p>
+                                    Más de 10 años. Desarrollo de marcas desde
+                                    cero con Illustrator, Affinity, Photoshop.
+                                    Proceso creativo con referencias y
+                                    propuestas múltiples.
+                                </p>
+                                <p>
+                                    Optimización extrema de SVG para web (hasta
+                                    90% de reducción).
+                                </p>
+                                <div class="aplica">
+                                    <i class="fas fa-bullseye"></i>
+                                    <strong>Aplica a:</strong> Startups, pymes,
+                                    eventos, campañas de marketing, rebranding.
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+                    <!-- 5 Animación 2D / motion graphics -->
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-film"></i>
+                        </div>
+                        <div class="skill-title">
+                            Animación 2D · motion graphics
+                        </div>
+                        <div class="skill-desc">
+                            Logos animados, piezas para redes. Procreate, After
+                            Effects, Lottie. Animación frame a frame y motion.
+                        </div>
+                        <details>
+                            <summary>más+</summary>
+                            <div class="details-content">
+                                <p>
+                                    Animaciones limpias para branding (intros,
+                                    banners). Uso de Procreate Dreams, After
+                                    Effects básico. Perfecto para contenido
+                                    social.
+                                </p>
+                                <div class="aplica">
+                                    <i class="fas fa-bullseye"></i>
+                                    <strong>Aplica a:</strong> Branding, RRSS,
+                                    presentaciones corporativas, vídeos
+                                    promocionales.
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+                    <!-- 6 Frontend vanilla ultra-ligero -->
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="skill-title">
+                            Frontend vanilla ultra-ligero
+                        </div>
+                        <div class="skill-desc">
+                            HTML, CSS, JS puro sin frameworks. Micro‑frameworks
+                            propios, optimización extrema (esbuild, lazy
+                            loading).
+                        </div>
+                        <details>
+                            <summary>más+</summary>
+                            <div class="details-content">
+                                <p>
+                                    Código reutilizable: helpers, enrutamiento
+                                    SPA, gestión de estado. Optimización con
+                                    esbuild, CSS crítico, mejora de LCP.
+                                </p>
+                                <p>
+                                    Diseños modernos con CSS Grid/Flexbox,
+                                    accesibles y responsivos.
+                                </p>
+                                <div class="aplica">
+                                    <i class="fas fa-bullseye"></i>
+                                    <strong>Aplica a:</strong> Landing pages,
+                                    dashboards, PWAs, prototipos de alto
+                                    rendimiento.
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+                    <!-- 7 Backend serverless (Cloudflare Workers) -->
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <div class="skill-title">
+                            Backend serverless (Cloudflare)
+                        </div>
+                        <div class="skill-desc">
+                            APIs REST, autenticación manual, D1, R2. Seguridad
+                            robusta, rate limiting, tokens, fingerprint.
+                        </div>
+                        <details>
+                            <summary>más+</summary>
+                            <div class="details-content">
+                                <p>
+                                    Workers con CRUD, SQLite (D1),
+                                    almacenamiento R2. Autenticación con cookies
+                                    seguras, JWT, mitigación de XSS/CSRF.
+                                </p>
+                                <p>
+                                    Integraciones con Telegram, correos,
+                                    despliegue continuo vía GitHub + Pages.
+                                </p>
+                                <div class="aplica">
+                                    <i class="fas fa-bullseye"></i>
+                                    <strong>Aplica a:</strong> Startups,
+                                    sistemas de gestión, APIs, proyectos con
+                                    seguridad a medida.
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+                    <!-- 8 PWAs y apps móviles -->
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="skill-title">
+                            PWAs · aplicaciones móviles
+                        </div>
+                        <div class="skill-desc">
+                            Apps instalables con offline, push, Service Worker.
+                            Experiencia nativa en móvil y escritorio.
+                        </div>
+                        <details>
+                            <summary>más+</summary>
+                            <div class="details-content">
+                                <p>
+                                    He convertido sistemas de gestión en PWA con
+                                    cache, sincronización en segundo plano,
+                                    notificaciones push (Web Push).
+                                </p>
+                                <p>
+                                    Manifiesto, iconos adaptables, pruebas en
+                                    múltiples dispositivos.
+                                </p>
+                                <div class="aplica">
+                                    <i class="fas fa-bullseye"></i>
+                                    <strong>Aplica a:</strong> Apps de gestión,
+                                    e‑commerce, herramientas de campo.
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+                    <!-- 9 Automatización ofimática (VBA / Apps Script) -->
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-file-excel"></i>
+                        </div>
+                        <div class="skill-title">Automatización ofimática</div>
+                        <div class="skill-desc">
+                            Excel VBA, Google Apps Script. Macros complejas,
+                            paneles, flujos entre Sheets, Gmail, Drive.
+                        </div>
+                        <details>
+                            <summary>más+</summary>
+                            <div class="details-content">
+                                <p>
+                                    Desarrollo de macros desde simples hasta
+                                    sistemas casi completos (formularios,
+                                    Solver). Paneles administrativos con Apps
+                                    Script + frontend.
+                                </p>
+                                <p>
+                                    Validaciones, documentación y robustez para
+                                    usuarios finales.
+                                </p>
+                                <div class="aplica">
+                                    <i class="fas fa-bullseye"></i>
+                                    <strong>Aplica a:</strong> Administración,
+                                    contabilidad, RRHH, pymes.
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+                    <!-- 10 Herramientas internas (ERP ligero) -->
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <div class="skill-title">
+                            Herramientas internas · ERP ligero
+                        </div>
+                        <div class="skill-desc">
+                            Sistemas de gestión a medida: empleados, sucursales,
+                            inventarios, roles. Paneles y CRUD eficientes.
+                        </div>
+                        <details>
+                            <summary>más+</summary>
+                            <div class="details-content">
+                                <p>
+                                    Ejemplo real: sistema PWA para agencia
+                                    multiservicios (Cloudflare Workers + D1).
+                                    Autenticación por roles, dashboards,
+                                    exportación Excel.
+                                </p>
+                                <p>
+                                    Seguridad con hashes, tokens y validación
+                                    por niveles.
+                                </p>
+                                <div class="aplica">
+                                    <i class="fas fa-bullseye"></i>
+                                    <strong>Aplica a:</strong> Pymes,
+                                    cooperativas, digitalización de procesos.
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+                    <!-- 11 Fotografía comercial -->
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <div class="skill-title">Fotografía comercial</div>
+                        <div class="skill-desc">
+                            Retrato, producto, espacios. Edición profesional con
+                            Photoshop. Imágenes optimizadas para web.
+                        </div>
+                        <details>
+                            <summary>más+</summary>
+                            <div class="details-content">
+                                <p>
+                                    Cámara Canon Rebel T6i, control manual.
+                                    Iluminación natural/artificial. Dirección de
+                                    personas, estilo lifestyle.
+                                </p>
+                                <p>
+                                    Edición RAW en Lightroom/Photoshop,
+                                    exportación optimizada.
+                                </p>
+                                <div class="aplica">
+                                    <i class="fas fa-bullseye"></i>
+                                    <strong>Aplica a:</strong> Marcas, retratos
+                                    profesionales, inmobiliarias, contenido web.
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </section>
+
+            <!-- EXPERIENCIA LABORAL -->
+            <section id="experiencia">
+                <h2><i class="fas fa-briefcase"></i> Experiencia laboral</h2>
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <span class="exp-title"
+                            >Ingeniero / Analista técnico</span
+                        >
+                        <span class="exp-date">2024 – 2026</span>
+                    </div>
+                    <div class="exp-place">
+                        Empresa de Construcción y Montaje · Zona Especial de
+                        Desarrollo Mariel, Cuba
+                    </div>
+                    <div class="exp-desc">
+                        <ul>
+                            <li>
+                                Cálculo de volúmenes y materiales a partir de
+                                modelos 3D y planos, aplicando normas de
+                                desperdicio.
+                            </li>
+                            <li>
+                                Automatización de hojas de cálculo para
+                                presupuestos y seguimiento de obras (Excel VBA).
+                            </li>
+                            <li>
+                                Coordinación con equipos de obra para verificar
+                                medidas y tolerancias.
+                            </li>
+                            <li>
+                                Elaboración de informes técnicos y reportes de
+                                avance.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <span class="exp-title"
+                            >Diseñador y desarrollador freelance</span
+                        >
+                        <span class="exp-date">2012 – presente</span>
+                    </div>
+                    <div class="exp-place">
+                        Por cuenta propia · La Habana / Remoto
+                    </div>
+                    <div class="exp-desc">
+                        <ul>
+                            <li>
+                                Modelado 3D técnico para arquitectura, industria
+                                y fabricación digital (SketchUp).
+                            </li>
+                            <li>
+                                Diseño gráfico: identidad corporativa, branding,
+                                flyers, packaging.
+                            </li>
+                            <li>
+                                Desarrollo web full-stack (frontend vanilla +
+                                backend en Cloudflare Workers) y PWAs.
+                            </li>
+                            <li>
+                                Automatizaciones con Excel/Google Apps Script
+                                para pequeñas empresas.
+                            </li>
+                            <li>
+                                Sesiones fotográficas de retrato y producto.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- EDUCACIÓN -->
+            <section id="educacion">
+                <h2><i class="fas fa-graduation-cap"></i> Educación</h2>
+                <div class="edu-item">
+                    <div class="exp-header">
+                        <span class="exp-title">Ingeniería Industrial</span>
+                        <span class="exp-date">2019 – 2024</span>
+                    </div>
+                    <div class="exp-place">
+                        Universidad Central “Marta Abreu” de Las Villas, Cuba
+                    </div>
+                    <div class="exp-desc">
+                        Título de Ingeniero Industrial. Formación en
+                        optimización de procesos, logística, organización de la
+                        producción y análisis de datos.
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROYECTOS DESTACADOS -->
+            <section id="proyectos">
+                <h2><i class="fas fa-star"></i> Proyectos destacados</h2>
+                <ul class="proyectos-list">
+                    <li>
+                        <i class="fas fa-cube"></i> Modelo 3D de nave industrial
+                        para montaje (Mariel)
+                    </li>
+                    <li>
+                        <i class="fas fa-paint-brush"></i> Identidad visual para
+                        marca local (logotipo, papelería, web)
+                    </li>
+                    <li>
+                        <i class="fas fa-code"></i> Sistema de gestión PWA para
+                        agencia multiservicios (Cloudflare Workers + D1)
+                    </li>
+                    <li>
+                        <i class="fas fa-file-excel"></i> Plantilla Excel con
+                        macros para presupuestos de construcción
+                    </li>
+                    <li>
+                        <i class="fas fa-camera"></i> Serie de retratos para
+                        campaña de emprendedores
+                    </li>
+                    <li>
+                        <i class="fas fa-vector-square"></i> Set de iconos SVG
+                        ultraligeros para plataforma educativa
+                    </li>
+                    <li>
+                        <i class="fas fa-draw-polygon"></i> Piezas para
+                        impresión 3D (soportes, prototipos funcionales)
+                    </li>
+                    <li>
+                        <i class="fas fa-robot"></i> Bot de Telegram conectado a
+                        Worker para notificaciones
+                    </li>
+                </ul>
+                <p style="margin-top: 1.5rem; color: #4f6b8a">
+                    <i class="fas fa-image"></i> Portafolio visual disponible
+                    bajo petición.
+                </p>
+            </section>
+
+            <!-- IDIOMAS -->
+            <section id="idiomas">
+                <h2><i class="fas fa-language"></i> Idiomas</h2>
+                <div class="idiomas">
+                    <span><i class="fas fa-flag"></i> Español: Nativo</span>
+                    <span
+                        ><i class="fas fa-flag"></i> Inglés: Intermedio
+                        (lectura/escritura fluida, conversación B1–B2)</span
+                    >
+                </div>
+            </section>
+
+            <footer>
+                Manuel Mompies · Actualizado 2026 · CV web interactivo
+            </footer>
+        </div>
+        <!-- sin scripts extra -->
+    </body>
+</html>

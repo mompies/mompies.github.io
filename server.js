@@ -5,17 +5,25 @@ const path = require("path");
 const PORT = 3000;
 
 const server = http.createServer((req, res) => {
-  // Servir solo el archivo index.html
-  const filePath = path.join(__dirname, "index.html");
+  const route = req.url === "/" ? "/index.html" : req.url;
+  const filePath = path.join(__dirname, route);
+
+  const getContentType = (ext) => {
+    if (ext === ".css") return "text/css";
+    if (ext === ".html") return "text/html";
+    return "application/octet-stream";
+  };
+
+  const contentType = getContentType(path.extname(filePath));
 
   fs.readFile(filePath, (err, content) => {
     if (err) {
-      res.writeHead(500);
-      res.end("Error al cargar el archivo");
+      res.writeHead(404);
+      res.end("No se encontró el recurso solicitado");
       return;
     }
 
-    res.writeHead(200, { "Content-Type": "text/html" });
+    res.writeHead(200, { "Content-Type": contentType });
     res.end(content);
   });
 });
